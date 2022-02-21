@@ -20,7 +20,7 @@ export var ignore_rotation = false
 signal movement_info
 
 # when characters dies
-var frozen = false
+var is_frozen = false
 
 func _ready():
 	drag = float(move_accel) / max_speed
@@ -38,7 +38,7 @@ func set_move_vec(_move_vec: Vector3):
 # Lag independent
 func _physics_process(delta):
 	# if frozen, don't do anything
-	if frozen:
+	if is_frozen:
 		return
 		
 	var cur_move_vec = move_vec
@@ -52,12 +52,12 @@ func _physics_process(delta):
 	velocity = body_to_move.move_and_slide_with_snap(velocity, snap_vec, Vector3.UP)
 	
 	# returns true if the body is on the floor
-	var grounded = body_to_move.is_on_floor()
+	var is_grounded = body_to_move.is_on_floor()
 	
-	if grounded:
+	if is_grounded:
 		# anything but 0 or 1, always want to move down to keep grounded^ updated
 		velocity.y = -0.01
-	if grounded and pressed_jump:
+	if is_grounded and pressed_jump:
 		velocity.y = jump_force
 		# you won't stick to the ground if you're jumping
 		snap_vec = Vector3.ZERO
@@ -65,11 +65,11 @@ func _physics_process(delta):
 		snap_vec = Vector3.DOWN
 	# jump will be active for 1 frame only
 	pressed_jump = false
-	emit_signal("movement_info", velocity, grounded)
+	emit_signal("movement_info", velocity, is_grounded)
 
 func freeze():
-	frozen = true
+	is_frozen = true
 
 func unfreeze():
-	frozen = false
+	is_frozen = false
 
