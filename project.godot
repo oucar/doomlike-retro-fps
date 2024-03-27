@@ -8,9 +8,13 @@
 
 config_version=4
 
+_global_script_classes=[  ]
+_global_script_class_icons={
+}
+
 [application]
 
-config/name="doomlike"
+config/name="FPS Course"
 run/main_scene="res://World.tscn"
 config/icon="res://icon.png"
 
@@ -31,7 +35,6 @@ texture={
 "process/HDR_as_SRGB": false,
 "process/fix_alpha_border": true,
 "process/invert_color": false,
-"process/normal_map_invert_y": false,
 "process/premult_alpha": false,
 "size_limit": 0,
 "stream": false,
@@ -76,10 +79,6 @@ exit={
 3d_physics/layer_1="environment"
 3d_physics/layer_2="characters"
 3d_physics/layer_3="hitboxes"
-
-[physics]
-
-common/enable_pause_aware_picking=true
 
 [rendering]
 
