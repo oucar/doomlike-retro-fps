@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "HitBox",
 "language": "GDScript",
 "path": "res://characters/HitBox.gd"
+}, {
+"base": "Area",
+"class": "Pickup",
+"language": "GDScript",
+"path": "res://pickups/Pickup.gd"
 } ]
 _global_script_class_icons={
-"HitBox": ""
+"HitBox": "",
+"Pickup": ""
 }
 
 [application]
@@ -23,6 +29,10 @@ _global_script_class_icons={
 config/name="FPS Course"
 run/main_scene="res://World.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/fullscreen=true
 
 [importer_defaults]
 

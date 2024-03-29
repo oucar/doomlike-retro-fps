@@ -33,7 +33,7 @@ func hurt(damage: int, dir: Vector3):
 		emit_signal("dead")
 	else:
 		emit_signal("hurt")
-	emit_signal("health_changed")
+	emit_signal("health_changed", cur_health)
 
 func heal(amount: int):
 	if cur_health <= 0:
@@ -42,7 +42,7 @@ func heal(amount: int):
 	if cur_health > max_health:
 		cur_health = max_health
 	emit_signal("healed")
-	emit_signal("health_changed")
+	emit_signal("health_changed", cur_health)
 
 func spawn_blood(dir):
 	var blood_spray_inst = blood_spray.instance()
@@ -66,3 +66,8 @@ func spawn_gibs():
 	get_tree().get_root().add_child(gibs_inst)
 	gibs_inst.global_transform.origin = global_transform.origin
 	gibs_inst.enable_gibs()
+
+func get_pickup(pickup_type, ammo):
+	match pickup_type:
+		Pickup.PICKUP_TYPES.HEALTH:
+			heal(ammo)

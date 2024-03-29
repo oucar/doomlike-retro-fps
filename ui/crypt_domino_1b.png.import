@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fire_spritesheet.png-69cf2f7bb9b848616a73d85898fc84ad.stex"
+path="res://.import/crypt_domino_1b.png-467e4ff16f7d97804a99ba1bb14061cd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://weapons/raw_assets/fire_spritesheet.png"
-dest_files=[ "res://.import/fire_spritesheet.png-69cf2f7bb9b848616a73d85898fc84ad.stex" ]
+source_file="res://ui/crypt_domino_1b.png"
+dest_files=[ "res://.import/crypt_domino_1b.png-467e4ff16f7d97804a99ba1bb14061cd.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=false

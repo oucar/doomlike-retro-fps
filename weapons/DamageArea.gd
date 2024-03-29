@@ -2,7 +2,7 @@ extends Area
 
 
 var bodies_to_exclude = []
-var damage = 1
+export var damage = 1
 
 func set_damage(_damage: int):
 	damage = _damage
